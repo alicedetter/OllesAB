@@ -10,23 +10,22 @@ main{
     background: #ffffff;
 }
 header{
-    background: #a34848;
+    background: #767779;
     height:65px;
     align-items:center;
     display:flex;
-    padding-left:8px;
-
 }
 nav{
-    background: #d17c7c;
+    background: #ffffff;
     height:35px;
     align-items:center;
     display:flex;
-    padding-left:8px;
+    padding:10px;
     gap:5px;
+    border-bottom: 1px solid rgb(0,0,0,.2);
 }
 footer{
-    background: #a34848;
+    background: #767779;
     justify-content:center;
     align-items:center;
     display:flex;
@@ -40,7 +39,21 @@ body{
 }
 nav a{
     color:black;
+    text-decoration:none;
 }
 nav a:hover{
     color: rgb(58, 58, 58);
+}
+h1{
+    padding:10px;
+}
+.catchphrase{
+    background: #403e55;
+    width:fit-content;
+    border-radius:5px;
+}
+.leftside{
+    display:flex;
+    flex-direction:column;
+    padding:10px;
 }
