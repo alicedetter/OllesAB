@@ -1,21 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* Below is all the OllesAB-logo (well, don't forget the :root) */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+:root{
+  --size:200px;
+  --color: rgb(255, 255, 255); /*Yeah, or whatever... */
+}
+*{
+    /*outline:1px dotted green; /* For debugging purposes */      
+}
+
+.olles{
+  position:absolute;
+  top:calc(var(--size) / 80);
+  height:calc(var(--size) / 8);
+  width:var(--size);
+  text-align:center;
+  font-family:'Noto Sans JP', sans-serif;
+  font-size:calc(var(--size) / 5);
+  color:var(--color);
+  letter-spacing:calc((var(--size) / 100) * -1 );  
+}
+.olles:before{
+  position:absolute;
+  top:calc(var(--size) / 14);
+  left:0;
+  content:'';
+  width:var(--size);
+  height:calc(var(--size) / 2);
+  border-top:calc(var(--size) / 55) solid var(--color); 
+}
+.olles:after{
+  position:absolute;
+  top:calc(var(--size) / 14);
+  left:calc(var(--size) / 11);
+  content:'';
+  width:calc(var(--size) * .85);
+  height:calc(var(--size) / 6.4);
+  border-bottom:calc(var(--size) / 55) solid var(--color); 
+}
+.olles i{
+  position:absolute;
+  top:calc((var(--size) / 80) * -1);
+  left:calc(var(--size) / 15);
+  content:'';
+  width:calc(var(--size) / 8);
+  height:calc(var(--size) / 6.4);
+  border-bottom:calc(var(--size) / 55) solid var(--color);   
+}
+.olles i:after{
+  position:absolute;
+  top:0;
+  left:calc(var(--size) *.72);
+  content:'';
+  width:calc(var(--size) / 6);
+  height:calc(var(--size) / 6.4);
+  border-bottom:calc(var(--size) / 55) solid var(--color);   
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 main{
-    display:grid;
+    display:flex;
+    flex-direction: column;
     flex-grow:10;
     background: #ffffff;
+    align-items: center;    
+    
+    --grid-template-columns: 1fr 1fr;
+    --grid-template-rows: auto;
+    gap:2.3rem;
+    padding:15px;
+    width:80%;
 }
 header{
-    background: #767779;
-    height:65px;
+    background: #464646;
+    height:200px;
     align-items:center;
+    padding:20px;
     display:flex;
+    color:white;
+    width: 100%;
+    overflow:hidden;
 }
 nav{
+    z-index:100;
+    width:100%;
     background: #ffffff;
     height:35px;
     align-items:center;
@@ -25,17 +98,20 @@ nav{
     border-bottom: 1px solid rgb(0,0,0,.2);
 }
 footer{
-    background: #767779;
+    background: #464646;
     justify-content:center;
     align-items:center;
     display:flex;
     height:40px;
+    color:white;
+    width:100%;
 }
 body{
     height:100dvh;
     display:flex;
     flex-direction:column;
     font-family: "Oswald", sans-serif;
+    align-items:center;
 }
 nav a{
     color:black;
@@ -44,16 +120,158 @@ nav a{
 nav a:hover{
     color: rgb(58, 58, 58);
 }
-h1{
-    padding:10px;
-}
 .catchphrase{
-    background: #403e55;
+    background: linear-gradient(#545454, rgb(33, 33, 33));
     width:fit-content;
-    border-radius:5px;
+    border-radius:1rem;
+    color:white;
+    font-size:35px;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    padding:0.5rem;
+    
 }
-.leftside{
+.OlleBild{
+    width:30rem;
+    height:20rem;
+}
+.scroll{
     display:flex;
     flex-direction:column;
-    padding:10px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    width:100%;
+    align-items: center;
+}
+.bottom{
+    background: #2b2b2b;
+    display:flex;
+    flex-direction:row;
+    padding:4rem;
+    color:white;
+    width:100%;
+    gap:6rem;
+    margin-top:6rem;
+    place-items:center;
+}
+.rubrik1{
+    text-align:center;
+}
+.rubrik2{
+    text-align:center;
+}
+.text1{
+    text-align:center;
+}
+.text2{
+    text-align:center;
+}
+.Staff{
+    width:14rem;
+    height:14rem;
+    border-radius:1rem;
+    margin-right:1rem;
+    margin-left:1rem;
+}
+.StaffBox{
+    display:flex;
+    flex-direction:row;
+    gap:10rem;
+}
+p{
+    margin-right:1rem;
+}
+.Who{
+    --background: #7b7b7b;
+    border-radius:1rem;
+    padding:0.8rem;
+    background: linear-gradient(#7b7b7b, #2c2c2c);
+    color:white;
+}
+.StaffCard{
+    display:flex;
+    flex-direction:row;
+    background: linear-gradient(rgb(108, 108, 108), rgb(44, 44, 44));
+    width:30rem;
+    height:18rem;
+    align-items:center;
+    border-radius:1rem;
+}
+.StaffCard div h2{
+    margin-bottom:1rem;
+}
+.StaffCard div p:first-of-type{
+    margin-bottom:0.5rem;
+}
+.StaffCard div{
+    color:white;
+    margin-bottom:5rem;
+}
+.StaffCardLast div{
+    color:white;
+    margin-bottom:5rem;
+}
+.StaffCardLast{
+    display:flex;
+    flex-direction:row;
+    background: linear-gradient(rgb(108, 108, 108), rgb(44, 44, 44));
+    width:30rem;
+    height:18rem;
+    align-items:center;
+    border-radius:1rem;
+}
+@media screen  and (max-width: 1030px) {
+    .StaffBox{
+        margin-top:1rem;
+        flex-wrap: wrap;
+        gap:3rem;
+        justify-content:center;
+        align-items:center;
+    }
+    .StaffCardLast{
+        width:25rem;
+    }
+    .catchphrase{
+        font-size:25px;
+    }
+    .StaffCard{
+        width:25rem;
+    }
+    nav{
+        font-size:25px;
+    }
+    @media screen and (max-width:430px){
+        .StaffCard{
+            width:20rem;
+            height:15rem;
+        }
+        .StaffCard div h2{
+            font-size:15px;
+        }
+        .Staff{
+            width:12rem;
+            height:12rem;
+        }
+        .StaffCard div{
+            margin-bottom:2rem;
+        }
+        .StaffCardLast{
+            width:20rem;
+            height:15rem;
+        }
+        .StaffCardLast div h2{
+            font-size:15px;
+        }
+        .StaffCardLast div{
+            margin-bottom:2rem;
+        }
+        .catchphrase{
+            font-size:18px;
+        }
+        .OlleBild{
+            width:20rem;
+            height:15rem;
+        }
+    }
 }
