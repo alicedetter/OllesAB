@@ -6,9 +6,6 @@
   --size:200px;
   --color: rgb(255, 255, 255); /*Yeah, or whatever... */
 }
-*{
-    /*outline:1px dotted green; /* For debugging purposes */      
-}
 
 .olles{
   position:absolute;
